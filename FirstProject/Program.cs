@@ -1,6 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+List<User> repo = [];
+
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
