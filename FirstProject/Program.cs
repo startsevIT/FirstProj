@@ -3,7 +3,11 @@ var app = builder.Build();
 
 List<User> repo = [];
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/users", () => GetUsers());
+app.MapGet("/users/{id}", (int id) => FindUser(id));
+app.MapPost("/users", (User user) => CreateUser(user));
+app.MapPut("/users", (User user) => UpdateUser(user));
+app.MapDelete("/users/{id}", (int id) => DeleteUser(id));
 
 app.Run();
 
